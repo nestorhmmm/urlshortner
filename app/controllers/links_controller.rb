@@ -4,22 +4,21 @@ class LinksController < ApplicationController
   end
 
   def show
-    link = Link.where(:new_url=>params[:id]).first
+    link = Link.where(new_url: params[:id]).first
 
     if link
       redirect_to link.given_url
     else
-      render "index"
+      render 'index'
     end
   end
 
   def new
     @link = Link.new
 
-    letters = [('a'..'z'), ('A'..'Z')].map { |i| i.to_a }.flatten
-    @link.new_url = (0...8).map{ letters[rand(letters.length)] }.join
+    letters = [('a'..'z'), ('A'..'Z')].map(&:to_a).flatten
+    @link.new_url = (0...8).map { letters[rand(letters.length)] }.join
   end
-
 
   def create
     @link = Link.new(link_params)
@@ -33,13 +32,9 @@ class LinksController < ApplicationController
     end
   end
 
-
   private
 
   def link_params
     params.require(:link).permit(:given_url, :new_url)
   end
-
-
-end
 end

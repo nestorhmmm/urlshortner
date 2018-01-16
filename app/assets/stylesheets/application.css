@@ -13,3 +13,26 @@
  *= require_tree .
  *= require_self
  */
+   body {
+  	height: 100%;
+    background: -webkit-linear-gradient(90deg, #1D976C 10%, #93F9B9 90%);
+    background:    -moz-linear-gradient(90deg, #1D976C 10%, #93F9B9 90%);
+    background:     -ms-linear-gradient(90deg, #1D976C 10%, #93F9B9 90%);
+    background:      -o-linear-gradient(90deg, #1D976C 10%, #93F9B9 90%);
+    background:         linear-gradient(90deg, #1D976C 10%, #93F9B9 90%);
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+  }
+
+ h2 {
+   font-family: Times New Roman;
+   font-size: 3em;
+   text-align: center;
+ }
+
+ h4 {
+   font-family: Times New Roman;
+   font-size: 1em;
+   padding-left: 2em;
+   text-align: center;
+ }
