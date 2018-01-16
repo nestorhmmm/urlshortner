@@ -1,0 +1,17 @@
+<div class="form">
+  <% @link.errors.each do |attr, msg| %>
+  <%= msg %> on <%= attr %>
+  <% end %>
+
+  <%= form_for @link do |f| %>
+  <p style="font-size:2em">
+    <%= f.label :enter_url %><br>
+  </p>
+    <%= f.text_field :given_url, placeholder: 'beautify me' %>
+  <p>
+    <%= f.hidden_field :new_url, :value => @link.new_url %>
+    <br>
+    <%= f.submit "Give me a makeover" %>
+  </p>
+  <% end %>
+</div>
